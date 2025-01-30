@@ -4,10 +4,11 @@ public class Main {
 
     private final static Scanner scanner = new Scanner(System.in);
     private static Carro carro = new Carro("Ponto morto", false, 0);
+
     public static void main(String[] args) throws Exception {
         var opcao = -1;
 
-        do{
+        do {
             System.out.println("Escolha uma das opcoes:");
             System.out.println("1. Ligar Carro");
             System.out.println("2. Desligar Carro");
@@ -18,7 +19,7 @@ public class Main {
             System.out.println("0. Sair");
             opcao = scanner.nextInt();
 
-            switch (opcao){
+            switch (opcao) {
                 case 1 -> ligandoCarro();
                 case 2 -> desligandoCarro();
                 case 3 -> carro.mudarMarcha();
@@ -28,33 +29,26 @@ public class Main {
                 case 0 -> System.exit(0);
                 default -> System.out.println("Opcao invalida");
             }
-        
-        }while(true);
+
+        } while (true);
 
     }
 
-    private static boolean ligandoCarro(){
+    private static boolean ligandoCarro() {
 
-            return carro.ligarCarro();
-        
+        return carro.ligarCarro();
+
     }
 
-    private static boolean desligandoCarro(){
+    private static boolean desligandoCarro() {
         return carro.desligarCarro();
     }
-    
-    private static void acelerar(){
-        //System.out.println("Você está acelerando o carro");
+
+    private static void acelerar() {
         carro.acelerarCarro();
     }
 
-    private static void reduzir(){
-       // System.out.println("Você está reduzindo a velocidade");
+    private static void reduzir() {
         carro.reduzirCarro();
     }
-
-    //private static void virar(){
-      //  System.out.println("Voce esta virando.");
-     //   carro.virarLateral();
-    //}
 }
